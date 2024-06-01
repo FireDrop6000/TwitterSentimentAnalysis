@@ -4,20 +4,11 @@ import robertacolab
 
 app = Flask(__name__)
 cors = CORS(app)
-# @app.route("/")
-# def index():
-#     return "Congratulations, it's a web app!"
 
-@app.route("/")
+@app.route("/", methods=['POST'])
 def root():
     print("received request at /")
-    return "Unsupported Request"
-
-@app.route("/receiver", methods=["POST"])
-def postME():
     data = request.get_json()
-    # print(data)
-    # print(data)
     return jsonify(robertacolab.result(data))
 
 if __name__ == "__main__":
