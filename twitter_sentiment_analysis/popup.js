@@ -24,15 +24,15 @@ document.addEventListener('DOMContentLoaded', function() {
     else if (request.action === 'updateResult') {
 
       const resultElement = document.getElementById('result');
-      resultElement.innerText = `Sentiment: ${request.sentiment}`;
+      resultElement.innerText = `${request.sentiment}`;
       // Remove existing sentiment classes
       
       resultElement.classList.remove('positive', 'negative', 'neutral');
 
       // Add class based on sentiment
-      if (request.sentiment === 'Positive') {
+      if (request.sentiment === '"POSITIVE"') {
         resultElement.style.color = '#28a745'; // Green color for positive sentiment
-      } else if (request.sentiment === 'Negative') {
+      } else if (request.sentiment === '"NEGATIVE"') {
         resultElement.style.color = '#dc3545'; // Red color for negative sentiment
       } else {
         resultElement.style.color = '#ffc107'; // Yellow color for neutral sentiment
